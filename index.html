@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trend Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a producer's run sheet — punchy, scannable before the show
+   IDEA: the morning rundown clipped to a studio clipboard
+   PICTURE: each segment's clips playing in-line, big
+   COLOUR and TYPE: on-air red, studio black, paper white; Archivo + Inter
+   LAYOUT: day tabs, then segment cards stacked, clips in a snap row */
+:root{color-scheme:light dark;--bg:light-dark(#f6f5f2,#111214);--card:light-dark(#fff,#1b1c20);--ink:light-dark(#141414,#f2f2f2);--mut:light-dark(#5b5b60,#a4a4ad);--line:light-dark(#e3e1dc,#2c2d33);--red:#e8352b}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+header{background:#141414;color:#fff;padding:22px max(5vw,16px) 18px}
+h1{font:800 clamp(30px,6vw,46px)/1.05 Archivo,sans-serif;margin:0;display:flex;align-items:center;gap:12px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px rgba(232,53,43,.25)}
+.sub{color:#bdbdc4;margin:6px 0 0}
+nav{display:flex;gap:8px;overflow-x:auto;padding:14px max(5vw,16px);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:2}
+nav button{flex:none;font:600 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:22px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+nav button[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+nav button:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+main{max-width:1240px;margin:0 auto;padding:24px max(5vw,16px) 64px}
+.meta{color:var(--mut);font-size:14px;margin:0 0 18px}
+.seg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:22px}
+.seg h2{font:700 clamp(22px,4vw,30px)/1.1 Archivo,sans-serif;margin:6px 0 10px;text-wrap:balance}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:3px 10px;border-radius:12px;background:light-dark(#fde7e5,#3a1714);color:light-dark(#b3241c,#ff8a80)}
+.why{margin:0 0 14px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.cols h3{font:700 15px Archivo,sans-serif;margin:0 0 6px}
+.cols ul{margin:0;padding-left:20px}.cols li{margin-bottom:6px}
+.angle{border-left:4px solid var(--red);padding:6px 12px;margin:14px 0 0;color:var(--mut)}
+.clips{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:18px;padding-bottom:6px}
+.clip{flex:0 0 min(340px,86vw);scroll-snap-align:start;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.frame{position:relative;width:100%;aspect-ratio:9/16;max-height:600px;background:#000}
+.frame.wide{aspect-ratio:16/9}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.embed-x{padding:8px;min-height:200px}
+.cap{padding:10px 12px;font-size:14px}
+.cap b{display:block}.cap span{color:var(--mut)}
+.cap a{color:var(--red);font-weight:600}
+.empty{padding:60px 0;text-align:center;color:var(--mut)}
+@media(max-width:700px){.cols{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header><h1><span class="dot"></span>Trend Desk</h1><p class="sub">Daily rundown of what's trending — segments, talking points and the clips to watch.</p></header>
+<nav id="days" aria-label="Pick a day"></nav>
+<main id="out"><p class="empty">Loading the rundown…</p></main>
+<script>
+{
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const days=document.getElementById('days'),out=document.getElementById('out');
+const ytId=u=>{const m=u.match(/(?:v=|youtu\.be\/|shorts\/|embed\/|live\/)([\w-]{11})/);return m&&m[1]};
+const ttId=u=>{const m=u.match(/video\/(\d+)/);return m&&m[1]};
+const igPath=u=>{const m=u.match(/instagram\.com\/(?:[\w.]+\/)?(p|reel|reels|tv)\/([\w-]+)/);return m&&((m[1]==='reels'?'reel':m[1])+'/'+m[2])};
+let needX=false;
+const player=c=>{
+  const u=c.url||'',p=(c.platform||'').toLowerCase();
+  if(/youtu/.test(u)){const id=ytId(u);if(id)return `<div class="frame${/shorts\//.test(u)?'':' wide'}"><iframe src="https://www.youtube-nocookie.com/embed/${esc(id)}" allow="encrypted-media;picture-in-picture;fullscreen" loading="lazy" title="YouTube clip"></iframe></div>`}
+  if(/tiktok\.com/.test(u)){const id=ttId(u);if(id)return `<div class="frame"><iframe src="https://www.tiktok.com/embed/v2/${esc(id)}" allow="encrypted-media;fullscreen" loading="lazy" title="TikTok clip"></iframe></div>`}
+  if(/instagram\.com/.test(u)){const ip=igPath(u);if(ip)return `<div class="frame"><iframe src="https://www.instagram.com/${esc(ip)}/embed" loading="lazy" title="Instagram clip"></iframe></div>`}
+  if(/(twitter|x)\.com/.test(u)){needX=true;return `<div class="embed-x"><blockquote class="twitter-tweet" data-dnt="true"><a href="${esc(u.replace('x.com','twitter.com'))}">View post on X</a></blockquote></div>`}
+  return '';
+};
+const clip=c=>`<div class="clip">${player(c)}<div class="cap"><b>${esc(c.title||c.platform)}</b><span>${esc([c.platform,c.creator,c.views_note].filter(Boolean).join(' · '))}</span><br><a href="${esc(c.url)}" target="_blank" rel="noopener">Open original ↗</a></div></div>`;
+const list=(h,a)=>a&&a.length?`<div><h3>${h}</h3><ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
+const seg=s=>`<article class="seg"><span class="tag">${esc(s.category)}</span><h2>${esc(s.title)}</h2><p class="why">${esc(s.why_trending)}</p><div class="cols">${list('Talking points',s.talking_points)}${list('Questions for hosts',s.host_questions)}</div>${s.angle?`<p class="angle">${esc(s.angle)}</p>`:''}<div class="clips">${(s.clips||[]).map(clip).join('')}</div></article>`;
+const loadX=()=>{if(!needX)return;if(window.twttr&&twttr.widgets){twttr.widgets.load(out);return}const sc=document.createElement('script');sc.src='https://platform.twitter.com/widgets.js';sc.async=true;document.body.appendChild(sc)};
+async function show(d){
+  [...days.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.d===d));
+  out.innerHTML='<p class="empty">Loading…</p>';needX=false;
+  try{const r=await fetch(`data/${encodeURIComponent(d)}.json`,{cache:'no-store'});const j=await r.json();
+    out.innerHTML=`<p class="meta">${esc(j.date)} · ${esc((j.segments||[]).length)} segments${j.note?' · '+esc(j.note):''}</p>`+(j.segments||[]).map(seg).join('');
+    loadX();if(location.hash!=='#'+d)history.replaceState(null,'','#'+d);
+  }catch(e){out.innerHTML='<p class="empty">Couldn\'t load this day.</p>'}
+}
+fetch('data/dates.json',{cache:'no-store'}).then(r=>r.json()).then(ds=>{
+  ds=[...ds].sort().reverse();
+  if(!ds.length){out.innerHTML='<p class="empty">No rundowns yet — the first one lands after the next morning run.</p>';return}
+  days.innerHTML=ds.slice(0,30).map(d=>`<button data-d="${esc(d)}" aria-pressed="false">${esc(new Date(d+'T12:00:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'}))}</button>`).join('');
+  days.onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.d)};
+  const h=location.hash.slice(1);show(ds.includes(h)?h:ds[0]);
+}).catch(()=>{out.innerHTML='<p class="empty">No rundowns yet — the first one lands after the next morning run.</p>'});
+}
+</script>
+</body>
+</html>
