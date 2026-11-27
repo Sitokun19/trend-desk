@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T17:00:00Z",
+  "note": "Black Friday edition: a thin day for linkable viral clips, so four segments and no standalone news segment (the turkey-pardon and Black Friday nostalgia stories had no original post links we could verify).",
+  "segments": [
+    {
+      "title": "The Squeal Heard 'Round Thanksgiving: Tom Brady Loses It in the Booth",
+      "category": "Pop culture",
+      "why_trending": "Tom Brady let out a high-pitched, drawn-out squeal on the Fox broadcast as Jake Elliott's 59-yard field goal with 2 seconds left finished off the Eagles' 39-38 comeback win over the Cowboys. The Boston Globe said the clip had more than six million views by late Thursday night.",
+      "talking_points": [
+        "The game: Dallas led 31-10 late in the third quarter at AT&T Stadium. Per the AP, that's the biggest blown lead in Thanksgiving history.",
+        "Per SB Nation, the Cowboys had a better than 97% win probability with under five minutes left, and then Elliott hit from 59 with 2 seconds on the clock.",
+        "Brady, calling the game with Kevin Burkhardt, squealed as the kick went through. Fans called it an all-timer and 'generational' meme material, while others joked they didn't need to hear that noise.",
+        "It's turning into a pattern: PFN noted it follows Brady's viral reaction to a Deebo Samuel TD just 11 days earlier. The NFL also posted his reaction to QB Joe Milton leading the comeback."
+      ],
+      "host_questions": [
+        "Is Brady the broadcaster turning into a better meme machine than Brady the player ever was?",
+        "Do we want analysts who lose their minds like fans, or should the booth stay composed?",
+        "Where does this squeal rank among the great broadcast reactions of all time?"
+      ],
+      "angle": "Debate framing: Brady's booth reactions are either the most authentic thing in sports broadcasting right now or a bit that's starting to wear thin. Two viral moments in 11 days, so which is it?",
+      "clips": [
+        {
+          "platform": "X",
+          "url": "https://x.com/NFL/status/2126121538089025597",
+          "title": "Tom Brady reacts to Joe Milton leading the Eagles comeback",
+          "creator": "@NFL",
+          "views_note": ""
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/PatSullivan05/status/2126126936326086969",
+          "title": "Fan: the meme potential of Brady's reaction might be generational",
+          "creator": "@PatSullivan05",
+          "views_note": ""
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/TalkinJake/status/2126126704968265729",
+          "title": "Jomboy Media's Talkin' Jake on hearing Brady scream at Thanksgiving",
+          "creator": "@TalkinJake",
+          "views_note": ""
+        }
+      ]
+    },
+    {
+      "title": "Stuffing the Turkey: The Lions' Most Thanksgiving Celebration Ever",
+      "category": "Funny / viral",
+      "why_trending": "After Jahmyr Gibbs' 1-yard touchdown against the Bears, Gibbs and Amon-Ra St. Brown pretended to stuff offensive guard Christian Mahogany like a turkey while he lay on the ground. Underdog NFL's clip of it spread fast.",
+      "talking_points": [
+        "The bit: Mahogany lay on the turf as the 'turkey' while Gibbs and St. Brown did the stuffing, at Ford Field on Thanksgiving Day.",
+        "Reactions ranged from 'What did I just watch' to 'gotta be fined for this,' and even a 49ers fan admitted it was genuinely funny.",
+        "Detroit has hosted a game on every Thanksgiving since 1945, so it was fitting that the Lions' celebration was about the holiday itself.",
+        "The downside: the Lions led 19-10 at halftime but lost to the Bears on the last play."
+      ],
+      "host_questions": [
+        "Should this get fined, or is it exactly the kind of fun the league should want on Thanksgiving?",
+        "Does a great celebration still count if your team blows the game?",
+        "Which lineman gets cast as the turkey next year, and what's the sequel?"
+      ],
+      "angle": "An all-time Thanksgiving celebration that came in a loss. Debate whether a celebration should be judged on its own or remembered alongside the final score.",
+      "clips": [
+        {
+          "platform": "X",
+          "url": "https://x.com/UnderdogNFL/status/2126025061551268175?ref_src=twsrc%5Etfw",
+          "title": "Lions celebrate their TD by stuffing the turkey",
+          "creator": "@UnderdogNFL",
+          "views_note": ""
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/WxScholl/status/2126025311045210464?ref_src=twsrc%5Etfw",
+          "title": "\"What did I just watch\"",
+          "creator": "@WxScholl",
+          "views_note": ""
+        }
+      ]
+    },
+    {
+      "title": "Haymitch Eats First: Sunrise on the Reaping Takes the Thanksgiving Box Office",
+      "category": "Pop culture",
+      "why_trending": "The Hunger Games prequel about Haymitch opened to $119.3M domestically last weekend and led Thanksgiving Eve with $15M. Meanwhile, viewers on TikTok are posting their reactions, including confusion over Ampert's death scene.",
+      "talking_points": [
+        "The numbers: a $119.3M domestic opening (the fifth-biggest debut of the year, per Gold Derby), then $12.8M Monday and $16M Tuesday for $148.2M through five days.",
+        "Thanksgiving Eve: it led with $15M while new openers Focker-in-Law (about $5M opening day) and Hexed fight for second place.",
+        "Deadline credited Lionsgate's marketing with reigniting the franchise.",
+        "On TikTok, fans are breaking the movie down, and Ampert's death scene has left at least some viewers puzzled."
+      ],
+      "host_questions": [
+        "Is Haymitch the best character the franchise could have built a prequel around?",
+        "Why do prequels about a story we already know the ending of keep working?",
+        "Is a confusing death scene a flaw, or exactly what gets people talking online?"
+      ],
+      "angle": "Is this a story that still had something to say, or a lesson in what a smart marketing campaign can do for a familiar title?",
+      "clips": [
+        {
+          "platform": "TikTok",
+          "url": "https://www.tiktok.com/@rosierarabella/video/7711498159276559637",
+          "title": "Ampert's death in the movie: the scene that left me puzzled",
+          "creator": "@rosierarabella",
+          "views_note": ""
+        }
+      ]
+    },
+    {
+      "title": "A Million Data Centers in the Sky? SpaceX's Starmind Gets the FCC's OK",
+      "category": "Tech & gaming",
+      "why_trending": "On Nov 25, the FCC gave SpaceX conditional authorization for up to one million Starmind orbital data-center satellites, the first US authorization at that scale. CNN, CNBC, NPR and New Atlas all covered it, and The Neuron led its AI digest with the story.",
+      "talking_points": [
+        "The specs: satellites of 70 to 75 meters, in orbits between 500 and 1,002 km.",
+        "The pitch is to get around the power, grid, zoning and permitting limits that hold back data centers on the ground.",
+        "The fine print: it's an authorization, not a deployment. SpaceX has to launch a first Starmind satellite by Nov 25, 2033 or the license is forfeited.",
+        "Scientists quoted by NPR are skeptical about the economics and about how the chips would shed heat in space."
+      ],
+      "host_questions": [
+        "Is putting AI data centers in orbit visionary, or a very expensive way to avoid a zoning board?",
+        "If the problem is power and permitting on Earth, is space really the easiest fix?",
+        "A million satellites sounds wild, so how would you feel looking up at that night sky?"
+      ],
+      "angle": "Hype versus physics: an approval for a million satellites makes a great headline, but with a deadline seven years out and open questions about heat and cost, is this a real plan or a placeholder?",
+      "clips": [
+        {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=VzIRwXj2Q10",
+          "title": "SpaceX wins FCC approval for one million Starmind AI satellites",
+          "creator": "",
+          "views_note": ""
+        },
+        {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=5AXrx1_cL_0",
+          "title": "SpaceX Wants to Put AI Data Centers in Orbit — Inside Starmind",
+          "creator": "",
+          "views_note": ""
+        }
+      ]
+    }
+  ]
+}
